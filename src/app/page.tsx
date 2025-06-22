@@ -21,7 +21,7 @@ const pageLinks = [
 ];
 
 const bannerImages = [
-    { src: "https://images.unsplash.com/photo-1609867271607-c961d62f69b9?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 1", dataAiHint: "construction project" },
+    { src: "https://images.unsplash.com/photo-1634408798310-1e68f5d3f56e?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 1", dataAiHint: "construction project" },
     { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 2", dataAiHint: "building site" },
     { src: "https://images.unsplash.com/photo-1651853893081-0ae8e9342f68?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 3", dataAiHint: "construction crane" },
 ];
@@ -66,8 +66,8 @@ export default function Home() {
           <div className="flex flex-col space-y-3">
             {pageLinks.map((item) => (
               <Link href={item.href} key={item.href} passHref>
-                <Button variant="outline" size="lg" className="w-full h-16 text-base justify-start border-gray-300 shadow-sm">
-                  <item.icon className="mr-4 h-8 w-8 text-primary" />
+                <Button size="lg" className="w-full h-20 text-base justify-start shadow-sm bg-[#b11419] hover:bg-[#b11419]/90 text-white">
+                  <item.icon className="mr-4 h-10 w-10 text-white" />
                   {item.label}
                 </Button>
               </Link>
