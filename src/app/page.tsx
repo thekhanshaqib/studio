@@ -68,7 +68,7 @@ export default function Home() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex flex-col items-center justify-center p-4 rounded-lg shadow-sm text-white bg-[#b11419] hover:bg-[#b11419]/90 transition-colors h-28"
+                className="flex flex-col items-center justify-center p-2 rounded-lg shadow-sm text-white bg-[#b11419] hover:bg-[#b11419]/90 transition-colors h-24"
               >
                 <item.icon className="h-8 w-8 mb-2 text-white" />
                 <span className="text-center text-sm font-medium">{item.label}</span>
