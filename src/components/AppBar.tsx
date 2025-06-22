@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -14,8 +13,8 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
       <div className="max-w-sm mx-auto flex h-14 items-center px-4">
         {isHomePage ? (
           <div className="flex items-center">
-            <Image
-              src="https://storage.googleapis.com/aip-dev-source-images/e1436814-c104-4c4f-9a1b-e526a02b1154.png"
+            <img
+              src="https://megapower-mea.com/wp-content/uploads/2021/11/retinalogo.jpg"
               alt="Megapower Logo"
               width={150}
               height={36}
