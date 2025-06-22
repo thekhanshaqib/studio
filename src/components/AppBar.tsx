@@ -15,10 +15,10 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
         {isHomePage ? (
           <div className="flex items-center">
             <Image
-              src="https://placehold.co/120x30.png"
+              src="https://storage.googleapis.com/aip-dev-source-images/e1436814-c104-4c4f-9a1b-e526a02b1154.png"
               alt="Megapower Logo"
-              width={120}
-              height={30}
+              width={150}
+              height={36}
               data-ai-hint="logo"
             />
           </div>
