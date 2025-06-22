@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { ArrowLeft, Cog } from 'lucide-react';
+import Image from 'next/image';
+import { ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 type AppBarProps = {
@@ -12,9 +13,14 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-sm mx-auto flex h-14 items-center px-4">
         {isHomePage ? (
-          <div className="flex items-center font-bold text-lg">
-            <Cog className="h-6 w-6 mr-2 text-primary" />
-            <span>Megapower</span>
+          <div className="flex items-center">
+            <Image
+              src="https://placehold.co/120x30.png"
+              alt="Megapower Logo"
+              width={120}
+              height={30}
+              data-ai-hint="logo"
+            />
           </div>
         ) : (
           <>
