@@ -21,9 +21,9 @@ const pageLinks = [
 ];
 
 const bannerImages = [
-    { src: "https://images.unsplash.com/photo-1528601549403-51883c533924?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 1", dataAiHint: "construction project" },
+    { src: "https://images.unsplash.com/photo-1609867271607-c961d62f69b9?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 1", dataAiHint: "construction project" },
     { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 2", dataAiHint: "building site" },
-    { src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 3", dataAiHint: "construction crane" },
+    { src: "https://images.unsplash.com/photo-1651853893081-0ae8e9342f68?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 3", dataAiHint: "construction crane" },
 ];
 
 export default function Home() {
@@ -66,8 +66,8 @@ export default function Home() {
           <div className="flex flex-col space-y-3">
             {pageLinks.map((item) => (
               <Link href={item.href} key={item.href} passHref>
-                <Button variant="outline" size="lg" className="w-full h-14 text-base justify-start border-gray-300 shadow-sm">
-                  <item.icon className="mr-4 h-6 w-6 text-primary" />
+                <Button variant="outline" size="lg" className="w-full h-16 text-base justify-start border-gray-300 shadow-sm">
+                  <item.icon className="mr-4 h-8 w-8 text-primary" />
                   {item.label}
                 </Button>
               </Link>
