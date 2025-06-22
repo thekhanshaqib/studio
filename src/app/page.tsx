@@ -62,14 +62,16 @@ export default function Home() {
             <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
           </Carousel>
 
-          {/* Navigation List */}
-          <div className="flex flex-col space-y-3">
+          {/* Navigation Grid */}
+          <div className="grid grid-cols-2 gap-4">
             {pageLinks.map((item) => (
-              <Link href={item.href} key={item.href} passHref>
-                <Button size="lg" className="w-full h-20 text-base justify-start shadow-sm bg-[#b11419] hover:bg-[#b11419]/90 text-white">
-                  <item.icon className="mr-4 h-10 w-10 text-white" />
-                  {item.label}
-                </Button>
+              <Link
+                key={item.href}
+                href={item.href}
+                className="flex flex-col items-center justify-center p-4 rounded-lg shadow-sm text-white bg-[#b11419] hover:bg-[#b11419]/90 transition-colors h-28"
+              >
+                <item.icon className="h-8 w-8 mb-2 text-white" />
+                <span className="text-center text-sm font-medium">{item.label}</span>
               </Link>
             ))}
           </div>
