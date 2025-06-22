@@ -69,7 +69,7 @@ const featuredProjects = [
 
 export default function Home() {
     const plugin = React.useRef(
-        Autoplay({ delay: 4000, stopOnInteraction: true })
+        Autoplay({ delay: 4000, stopOnInteraction: true, stopOnMouseEnter: true })
     );
 
   return (
@@ -117,8 +117,6 @@ export default function Home() {
           <Carousel
             plugins={[plugin.current]}
             className="w-full"
-            onMouseEnter={plugin.current.stop}
-            onMouseLeave={plugin.current.reset}
             opts={{
               loop: true,
             }}
