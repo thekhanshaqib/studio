@@ -21,9 +21,9 @@ const pageLinks = [
 ];
 
 const bannerImages = [
-    { src: "https://placehold.co/600x300.png", alt: "Banner 1", dataAiHint: "modern factory" },
-    { src: "https://placehold.co/600x300.png", alt: "Banner 2", dataAiHint: "industrial machinery" },
-    { src: "https://placehold.co/600x300.png", alt: "Banner 3", dataAiHint: "construction site" },
+    { src: "https://images.unsplash.com/photo-1528601549403-51883c533924?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 1", dataAiHint: "construction project" },
+    { src: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 2", dataAiHint: "building site" },
+    { src: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", alt: "Banner 3", dataAiHint: "construction crane" },
 ];
 
 export default function Home() {
