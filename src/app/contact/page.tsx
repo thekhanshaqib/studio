@@ -4,10 +4,10 @@ import { Mail, Phone, MapPin, Download } from "lucide-react";
 import { AppBar } from '@/components/AppBar';
 
 const contactDetails = {
-  email: "contact@catalyst.inc",
+  email: "contact@megapower.llc",
   phone: "+1 (555) 123-4567",
-  address: "123 Innovation Drive, Tech City, 12345",
-  vcardUrl: "/catalyst-contact.vcf" 
+  address: "123 Electra Ave, Gearson, 54321",
+  vcardUrl: "/megapower-contact.vcf" 
 };
 
 export default function ContactPage() {
@@ -42,7 +42,7 @@ export default function ContactPage() {
               </div>
               <div className="pt-4">
                   <Button asChild className="w-full h-12 text-base">
-                      <a href={contactDetails.vcardUrl} download="CatalystInc_Contact.vcf">
+                      <a href={contactDetails.vcardUrl} download="Megapower_Contact.vcf">
                           <Download className="mr-2 h-5 w-5" />
                           Save Contact
                       </a>

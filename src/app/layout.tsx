@@ -4,8 +4,8 @@ import { BottomNavBar } from '@/components/BottomNavBar';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Catalyst Portfolio',
-  description: 'A portfolio app by Catalyst',
+  title: 'Megapower Portfolio',
+  description: 'A portfolio app by Megapower',
 };
 
 export default function RootLayout({

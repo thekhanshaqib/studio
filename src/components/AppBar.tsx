@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowLeft, Mountain } from 'lucide-react';
+import { ArrowLeft, Cog } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 type AppBarProps = {
@@ -13,8 +13,8 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
       <div className="max-w-sm mx-auto flex h-14 items-center px-4">
         {isHomePage ? (
           <div className="flex items-center font-bold text-lg">
-            <Mountain className="h-6 w-6 mr-2 text-primary" />
-            <span>Catalyst Inc.</span>
+            <Cog className="h-6 w-6 mr-2 text-primary" />
+            <span>Megapower</span>
           </div>
         ) : (
           <>

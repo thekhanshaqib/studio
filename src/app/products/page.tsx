@@ -16,7 +16,7 @@ type Product = {
 };
 
 const products: Product[] = [
-  { id: 'prod1', name: "Catalyst CRM Suite", category: "Software", description: "A powerful, all-in-one CRM to manage customer relationships, sales pipelines, and marketing campaigns.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "software dashboard", price: "$49/mo" },
+  { id: 'prod1', name: "Megapower CRM Suite", category: "Software", description: "A powerful, all-in-one CRM to manage customer relationships, sales pipelines, and marketing campaigns.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "software dashboard", price: "$49/mo" },
   { id: 'prod2', name: "Quantum Analytics", category: "Software", description: "Advanced analytics platform that provides deep insights into your business data with predictive modeling.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "data analytics", price: "$99/mo" },
   { id: 'prod3', name: "ConnectAPI", category: "Developer Tools", description: "A robust set of APIs to seamlessly integrate your applications with third-party services.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "API code", price: "Usage-based" },
   { id: 'prod4', name: "SecureVault", category: "Security", description: "Enterprise-grade security solution for data protection, threat detection, and compliance management.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "cyber security", price: "$129/mo" },

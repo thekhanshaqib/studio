@@ -32,10 +32,10 @@ const clients: Client[] = [
 ];
 
 const testimonials: Testimonial[] = [
-  { id: 'test1', name: "Jane Doe", title: "CEO", company: "Innovate Corp", quote: "Working with Catalyst was a game-changer for our business. Their strategic insights and technical expertise led to a 50% increase in user engagement. Truly a catalyst for growth!", avatarUrl: "https://placehold.co/100x100.png" },
-  { id: 'test2', name: "John Smith", title: "CTO", company: "Quantum Solutions", quote: "The team at Catalyst is unparalleled. They delivered a complex software solution on time and on budget, exceeding all our expectations. I can't recommend them highly enough.", avatarUrl: "https://placehold.co/100x100.png" },
+  { id: 'test1', name: "Jane Doe", title: "CEO", company: "Innovate Corp", quote: "Working with Megapower was a game-changer for our business. Their strategic insights and technical expertise led to a 50% increase in user engagement. Truly a catalyst for growth!", avatarUrl: "https://placehold.co/100x100.png" },
+  { id: 'test2', name: "John Smith", title: "CTO", company: "Quantum Solutions", quote: "The team at Megapower is unparalleled. They delivered a complex software solution on time and on budget, exceeding all our expectations. I can't recommend them highly enough.", avatarUrl: "https://placehold.co/100x100.png" },
   { id: 'test3', name: "Emily White", title: "Marketing Director", company: "EcoGoods", quote: "Their design team is phenomenal. They captured our brand essence perfectly and created a user experience that our customers love. A pleasure to work with from start to finish.", avatarUrl: "https://placehold.co/100x100.png" },
-  { id: 'test4', name: "Michael Brown", title: "Founder", company: "Starlight Studios", quote: "As a startup, we needed a partner who was both flexible and expert. Catalyst was that and more. They guided us through the entire product development lifecycle.", avatarUrl: "https://placehold.co/100x100.png" },
+  { id: 'test4', name: "Michael Brown", title: "Founder", company: "Starlight Studios", quote: "As a startup, we needed a partner who was both flexible and expert. Megapower was that and more. They guided us through the entire product development lifecycle.", avatarUrl: "https://placehold.co/100x100.png" },
 ];
 
 export default function ClientsPage() {
