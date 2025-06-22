@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -8,26 +9,38 @@ import { Button } from "@/components/ui/button";
 import { Badge } from '@/components/ui/badge';
 import { ProjectModal, type Project } from '@/components/ProjectModal';
 import { AppBar } from '@/components/AppBar';
+import { MapPin } from 'lucide-react';
 
 const ongoingProjects: Project[] = [
   {
     id: 'p1',
-    title: "Project Phoenix",
-    category: "Web Application",
-    description: "A comprehensive enterprise resource planning (ERP) system designed to streamline operations for a major logistics company. Features include real-time tracking, inventory management, and- automated reporting.",
+    title: "Jebel Ali Power Plant",
+    location: "Dubai, UAE",
+    description: "Full-scope mechanical and electrical installation for a new 500MW power plant, including turbine erection, piping, and high-voltage cabling.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "logistics dashboard",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "Docker"],
+    dataAiHint: "power plant exterior",
+    siteImages: [
+        { src: "https://placehold.co/600x400.png", dataAiHint: "site progress" },
+        { src: "https://placehold.co/600x400.png", dataAiHint: "construction site" },
+        { src: "https://placehold.co/600x400.png", dataAiHint: "electrical wiring" },
+    ],
+    clientName: "Dubai Electricity & Water Authority",
+    year: 2024,
     status: "Ongoing",
   },
   {
     id: 'p2',
-    title: "InnovateApp",
-    category: "Mobile App",
-    description: "A cross-platform mobile application for a fintech startup, enabling users to manage investments and track market trends with a highly intuitive interface.",
+    title: "RAK Cement Factory Upgrade",
+    location: "Ras Al Khaimah, UAE",
+    description: "Upgrading the clinker cooler system and installing a new waste heat recovery power plant to improve efficiency and sustainability.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "fintech app",
-    technologies: ["React Native", "Firebase", "Chart.js"],
+    dataAiHint: "cement factory",
+    siteImages: [
+        { src: "https://placehold.co/600x400.png", dataAiHint: "industrial machinery" },
+        { src: "https://placehold.co/600x400.png", dataAiHint: "factory interior" },
+    ],
+    clientName: "RAK Cement Co.",
+    year: 2024,
     status: "Ongoing",
   }
 ];
@@ -35,34 +48,34 @@ const ongoingProjects: Project[] = [
 const completedProjects: Project[] = [
   {
     id: 'c1',
-    title: "E-Shopify Redesign",
-    category: "E-commerce",
-    description: "A full redesign and migration of a popular online fashion retailer to a modern, headless e-commerce architecture. The project resulted in a 40% increase in conversion rates.",
+    title: "Sharjah Industrial Area Substation",
+    location: "Sharjah, UAE",
+    description: "Completed the testing and commissioning of a 132/33kV substation, ensuring full compliance with national grid standards.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "fashion website",
-    technologies: ["Shopify Plus", "Next.js", "GraphQL"],
+    dataAiHint: "electrical substation",
+     siteImages: [
+        { src: "https://placehold.co/600x400.png", dataAiHint: "control panel" },
+        { src: "https://placehold.co/600x400.png", dataAiHint: "power lines" },
+    ],
+    clientName: "Sharjah Electricity & Water Authority",
+    year: 2023,
     status: "Completed",
   },
   {
     id: 'c2',
-    title: "HealthWell Platform",
-    category: "Healthcare",
-    description: "A secure patient portal for a regional hospital network, allowing patients to book appointments, view medical records, and communicate with healthcare providers.",
+    title: "Abu Dhabi Steel Mill Maintenance",
+    location: "Abu Dhabi, UAE",
+    description: "Annual maintenance contract for the electrical and mechanical systems of a major steel production facility, minimizing downtime.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "healthcare portal",
-    technologies: ["Vue.js", ".NET Core", "Azure"],
+    dataAiHint: "steel mill",
+     siteImages: [
+        { src: "https://placehold.co/600x400.png", dataAiHint: "molten steel" },
+        { src: "https://placehold.co/600x400.png", dataAiHint: "heavy equipment" },
+    ],
+    clientName: "Emirates Steel",
+    year: 2022,
     status: "Completed",
   },
-  {
-    id: 'c3',
-    title: "Artisan's Marketplace",
-    category: "Web Platform",
-    description: "An online marketplace connecting artisans with buyers worldwide. Features included multi-vendor support, secure payments, and a custom review system.",
-    imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "online marketplace",
-    technologies: ["Laravel", "MySQL", "Stripe Connect"],
-    status: "Completed",
-  }
 ];
 
 const ProjectCard = ({ project, onViewDetails }: { project: Project, onViewDetails: (project: Project) => void }) => (
@@ -79,12 +92,12 @@ const ProjectCard = ({ project, onViewDetails }: { project: Project, onViewDetai
     </div>
     <CardHeader>
       <CardTitle>{project.title}</CardTitle>
-      <Badge variant="secondary" className="w-fit">{project.category}</Badge>
+      <Badge variant="secondary" className="w-fit inline-flex items-center gap-1">
+        <MapPin className="h-3 w-3" />
+        {project.location}
+      </Badge>
     </CardHeader>
-    <CardContent className="flex-grow">
-      <p className="text-muted-foreground line-clamp-3">{project.description}</p>
-    </CardContent>
-    <CardFooter>
+    <CardFooter className="mt-auto">
       <Button onClick={() => onViewDetails(project)} className="w-full">View Details</Button>
     </CardFooter>
   </Card>

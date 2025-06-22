@@ -12,55 +12,67 @@ type Service = {
 
 const coreServices: Service[] = [
   {
-    title: "Digital Strategy",
-    description: "Crafting data-driven roadmaps to navigate the digital landscape and achieve your business goals.",
+    title: "Mechanical Contracting",
+    description: "We specialize in mechanical installations across Power Plants, Cement Plants, and industrial facilities — including piping systems, turbines, steel structures, vertical mills, and clinker transport systems. Trusted by high-profile clients across the UAE, Mega Power is recognized for precision execution and long-term reliability.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "digital strategy",
+    dataAiHint: "mechanical",
   },
   {
-    title: "UI/UX Design",
-    description: "Creating intuitive and engaging user interfaces that provide meaningful experiences.",
+    title: "Electrical & Instrumentation",
+    description: "From underground cabling networks (LV, 11KV, 33KV) to advanced instrumentation systems, our team handles end-to-end services including survey, design, cable laying, jointing, and commissioning. Our expertise ensures your projects meet national safety, performance, and compliance standards.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "user interface",
+    dataAiHint: "electrical",
   },
   {
-    title: "Brand Identity",
-    description: "Building strong, memorable brand identities that resonate with your target audience.",
+    title: "Testing & Commissioning",
+    description: "We ensure electrical systems are compliant, safe, and operationally fit through advanced testing protocols. Our services include relay coordination, fault studies, arc flash analysis, and harmonic studies — empowering clients with safe, reliable power distribution.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "brand logo",
+    dataAiHint: "testing commissioning",
   },
   {
-    title: "Market Research",
-    description: "Uncovering valuable market insights to inform strategy and identify opportunities.",
+    title: "Construction Management",
+    description: "Mega Power delivers turnkey construction services for mechanical and electrical infrastructure in cement plants, WHR/ORC power plants, and industrial buildings. Our integrated approach blends engineering, project management, and execution under one roof.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "market research",
+    dataAiHint: "construction",
+  },
+  {
+    title: "MEP Installation & Maintenance",
+    description: "We provide complete MEP services — mechanical, electrical, plumbing — and preventive maintenance to ensure long-term performance and safety. Our experienced team eliminates defects like poor plumbing, faulty fittings, and subpar installations that compromise structural efficiency.",
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "installation maintenance",
+  },
+  {
+    title: "Heavy Lifting & Logistics",
+    description: "Our rigging division delivers safe and efficient heavy lifting solutions using specialized equipment and expert crews. From project planning to on-site execution, we handle complex rigging and logistics with a focus on safety and precision.",
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "lifting logistics",
+  },
+  {
+    title: "ORC WH Power Plant Solutions",
+    description: "With over a decade of experience, Mega Power is a trusted provider of ORC Waste Heat Recovery power plant installations. We offer design, engineering, procurement, commissioning, and maintenance — helping clients generate clean energy, optimize heat utilization, and reduce costs.",
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "power plant",
+  },
+  {
+    title: "Cement Sector",
+    description: "Mega Power is a trusted partner for end-to-end mechanical and electrical services in the cement industry. Our expertise covers equipment installation, raw material handling systems, vertical mills, clinker conveyors, ducting, and plant-wide MEP works. We ensure optimized operations through reliable construction, maintenance, and retrofitting of cement plant infrastructure. With deep domain experience and skilled execution, we help cement manufacturers achieve operational efficiency, safety, and long-term sustainability.",
+    imageUrl: "https://placehold.co/600x400.png",
+    dataAiHint: "power plant",
   },
 ];
 
 const technicalServices: Service[] = [
   {
-    title: "Web Development",
-    description: "Building responsive, high-performance websites and web applications using modern technologies.",
+    title: "Erection & Fabrication",
+    description: "We offer comprehensive fabrication and erection services — from structural steel, ducting, hoppers, heat exchangers to material handling systems and utility piping. Backed by precision engineering and quality control, we ensure flawless installations in industrial environments.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "web development",
+    dataAiHint: "erection fabrication",
   },
   {
-    title: "Mobile App Development",
-    description: "Developing native and cross-platform mobile apps for iOS and Android.",
+    title: "Replacement & Overhauling",
+    description: "We specialize in the replacement and refurbishment of critical components like bag house fans, shell liners, cooling towers, cyclone dip tubes, and crusher rotors. Our team ensures restored performance, extended asset life, and minimized downtime.",
     imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "mobile app",
-  },
-  {
-    title: "Cloud Solutions",
-    description: "Leveraging cloud infrastructure for scalable, secure, and efficient business operations.",
-    imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "cloud computing",
-  },
-  {
-    title: "E-commerce Platforms",
-    description: "Creating robust and user-friendly online stores to drive sales and grow your business.",
-    imageUrl: "https://placehold.co/600x400.png",
-    dataAiHint: "ecommerce shopping",
+    dataAiHint: "replacement overhauling",
   },
 ];
 
@@ -80,7 +92,7 @@ const ServiceCard = ({ service }: { service: Service }) => (
       <CardTitle className="text-xl text-primary">{service.title}</CardTitle>
     </CardHeader>
     <CardContent>
-      <p className="text-muted-foreground text-sm line-clamp-2">{service.description}</p>
+      <p className="text-muted-foreground text-sm">{service.description}</p>
     </CardContent>
   </Card>
 );
