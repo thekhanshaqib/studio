@@ -6,29 +6,30 @@ import { AppBar } from '@/components/AppBar';
 
 const companyInfo = {
   name: "Megapower Electromechanical LLC",
-  founded: "2005",
-  mission: "To provide powerful and reliable electromechanical solutions that drive progress and performance for our clients.",
-  vision: "To be a globally recognized leader in the electromechanical industry, renowned for our engineering excellence and customer commitment.",
+  founded: " January 2010",
+  mission: "To deliver reliable, high-quality Electro-Mechanical solutions through expert engineering, ethical practices, and a customer-first mindset.",
+  vision: "To be recognized as a leading contracting partner, setting benchmarks in technical excellence, trust, and long-term impact across industries.",
   values: [
-    "Performance",
     "Integrity",
-    "Client-Centricity",
     "Excellence",
-    "Innovation"
+    "Innovation",
+    "Commitment",
+    "Accountability",
+    "Collaboration"
   ]
 };
 
 export default function AboutPage() {
   return (
     <>
-      <AppBar title={`About ${companyInfo.name}`} />
+      <AppBar title={`About Megapower`} />
       <div className="bg-background">
         <div className="max-w-sm mx-auto p-4 space-y-8">
           
           <div className="space-y-4">
             <div className="relative h-48 w-full rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="https://images.unsplash.com/photo-1668243304495-4427bf1754cc?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Our modern workshop"
                 layout="fill"
                 objectFit="cover"
@@ -37,8 +38,8 @@ export default function AboutPage() {
             </div>
             <div>
               <h2 className="text-2xl font-bold tracking-tight mb-2">Our Story</h2>
-              <p className="text-muted-foreground">
-                Founded in {companyInfo.founded}, {companyInfo.name} has grown from a small workshop to a leading provider of electromechanical services. Our pride is in our performance, and our story is one of consistent growth, driven by a passion for engineering and a commitment to our clients.
+              <p className="text-sm text-muted-foreground">
+                Founded in {companyInfo.founded}, {companyInfo.name} is a trusted name in Mechanical, Civil, Electrical & Instrumentation contracting. Backed by over 20 years of proven capability, we bring together expert engineering, design, and project execution across Electro-Mechanical works — from equipment supply to testing, commissioning, and maintenance. Our team’s dedication, experience, and professionalism set us apart in delivering complex infrastructure with precision.
               </p>
             </div>
           </div>
@@ -48,7 +49,7 @@ export default function AboutPage() {
                   <CardTitle className="text-xl text-primary">Our Mission</CardTitle>
               </CardHeader>
               <CardContent>
-                  <p className="text-muted-foreground">{companyInfo.mission}</p>
+                  <p className="text-sm text-muted-foreground">{companyInfo.mission}</p>
               </CardContent>
           </Card>
            <Card>
@@ -56,7 +57,7 @@ export default function AboutPage() {
                   <CardTitle className="text-xl text-primary">Our Vision</CardTitle>
               </CardHeader>
               <CardContent>
-                  <p className="text-muted-foreground">{companyInfo.vision}</p>
+                  <p className="text-sm text-muted-foreground">{companyInfo.vision}</p>
               </CardContent>
           </Card>
 
@@ -71,7 +72,7 @@ export default function AboutPage() {
                     <div className="bg-primary/10 rounded-full p-2 mb-2">
                       <CheckCircle className="h-6 w-6 text-primary" />
                     </div>
-                    <span className="font-semibold text-sm">{value}</span>
+                    <span className="font text-xs">{value}</span>
                   </div>
                 ))}
               </div>
