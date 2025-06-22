@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 import { Quote } from 'lucide-react';
+import { AppBar } from '@/components/AppBar';
 
 type Client = {
   id: string;
@@ -39,58 +40,57 @@ const testimonials: Testimonial[] = [
 
 export default function ClientsPage() {
   return (
-    <div className="bg-background min-h-screen">
-      <div className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary">Our Clients &amp; Partners</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+    <>
+      <AppBar title="Our Clients" />
+      <div className="bg-background">
+        <div className="max-w-sm mx-auto p-4 space-y-8">
+          <p className="text-center text-muted-foreground">
             We are proud to have collaborated with a diverse range of industry leaders and innovators.
           </p>
-        </header>
 
-        <Card className="mb-12">
-          <CardHeader>
-            <CardTitle className="text-center text-2xl">Trusted By</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 items-center">
-              {clients.map(client => (
-                <div key={client.id} className="flex justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
-                  <Image src={client.logoUrl} alt={client.name} width={150} height={75} objectFit="contain" data-ai-hint={client.dataAiHint} />
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-center text-xl">Trusted By</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-3 gap-6 items-center">
+                {clients.slice(0, 6).map(client => (
+                  <div key={client.id} className="flex justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                    <Image src={client.logoUrl} alt={client.name} width={150} height={75} objectFit="contain" data-ai-hint={client.dataAiHint} />
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
 
-        <section>
-          <header className="text-center mb-8">
-            <h2 className="text-3xl font-bold tracking-tight">What Our Clients Say</h2>
-            <p className="mt-2 text-md text-muted-foreground">Words of appreciation from those we've worked with.</p>
-          </header>
-          
-          <ScrollArea className="w-full whitespace-nowrap rounded-lg">
-            <div className="flex w-max space-x-6 p-4">
-              {testimonials.map(testimonial => (
-                <Card key={testimonial.id} className="w-[350px] whitespace-normal flex-shrink-0">
-                  <CardContent className="p-6">
-                    <Quote className="h-8 w-8 text-accent mb-4" />
-                    <p className="text-muted-foreground mb-6">"{testimonial.quote}"</p>
-                    <div className="flex items-center">
-                      <Image src={testimonial.avatarUrl} alt={testimonial.name} width={48} height={48} className="rounded-full mr-4" data-ai-hint="person portrait" />
-                      <div>
-                        <p className="font-semibold">{testimonial.name}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.title}, {testimonial.company}</p>
+          <section>
+            <header className="text-center mb-4">
+              <h2 className="text-2xl font-bold tracking-tight">What Our Clients Say</h2>
+            </header>
+            
+            <ScrollArea className="w-full whitespace-nowrap rounded-lg">
+              <div className="flex w-max space-x-4 p-1">
+                {testimonials.map(testimonial => (
+                  <Card key={testimonial.id} className="w-[300px] whitespace-normal flex-shrink-0">
+                    <CardContent className="p-6">
+                      <Quote className="h-6 w-6 text-accent mb-3" />
+                      <p className="text-muted-foreground text-sm mb-4">"{testimonial.quote}"</p>
+                      <div className="flex items-center">
+                        <Image src={testimonial.avatarUrl} alt={testimonial.name} width={40} height={40} className="rounded-full mr-3" data-ai-hint="person portrait" />
+                        <div>
+                          <p className="font-semibold text-sm">{testimonial.name}</p>
+                          <p className="text-xs text-muted-foreground">{testimonial.title}, {testimonial.company}</p>
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            <ScrollBar orientation="horizontal" />
-          </ScrollArea>
-        </section>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" />
+            </ScrollArea>
+          </section>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

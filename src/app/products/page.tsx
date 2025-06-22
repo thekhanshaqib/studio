@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from '@/components/ui/button';
+import { AppBar } from '@/components/AppBar';
 
 type Product = {
   id: string;
@@ -54,7 +55,7 @@ const ProductCard = ({ product }: { product: Product }) => (
 const ProductGrid = ({ category }: { category: string }) => {
     const filteredProducts = category === "All" ? products : products.filter(p => p.category === category);
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6">
             {filteredProducts.map(product => (
                 <ProductCard key={product.id} product={product} />
             ))}
@@ -64,31 +65,31 @@ const ProductGrid = ({ category }: { category: string }) => {
 
 export default function ProductsPage() {
   return (
-    <div className="bg-background min-h-screen">
-      <div className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary">Our Products</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+    <>
+      <AppBar title="Our Products" />
+      <div className="bg-background">
+        <div className="max-w-sm mx-auto p-4">
+          <p className="text-center text-muted-foreground mb-8">
             Innovative solutions engineered to solve today's challenges and unlock tomorrow's opportunities.
           </p>
-        </header>
 
-        <Tabs defaultValue="All" className="w-full">
-          <div className="flex justify-center mb-8">
-            <TabsList>
-              {categories.map(category => (
-                <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
-              ))}
-            </TabsList>
-          </div>
-          
-          {categories.map(category => (
-            <TabsContent key={category} value={category}>
-                <ProductGrid category={category} />
-            </TabsContent>
-          ))}
-        </Tabs>
+          <Tabs defaultValue="All" className="w-full">
+            <div className="flex justify-center mb-8">
+              <TabsList>
+                {categories.map(category => (
+                  <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
+            
+            {categories.map(category => (
+              <TabsContent key={category} value={category}>
+                  <ProductGrid category={category} />
+              </TabsContent>
+            ))}
+          </Tabs>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

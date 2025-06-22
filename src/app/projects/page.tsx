@@ -7,13 +7,14 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Button } from "@/components/ui/button";
 import { Badge } from '@/components/ui/badge';
 import { ProjectModal, type Project } from '@/components/ProjectModal';
+import { AppBar } from '@/components/AppBar';
 
 const ongoingProjects: Project[] = [
   {
     id: 'p1',
     title: "Project Phoenix",
     category: "Web Application",
-    description: "A comprehensive enterprise resource planning (ERP) system designed to streamline operations for a major logistics company. Features include real-time tracking, inventory management, and automated reporting.",
+    description: "A comprehensive enterprise resource planning (ERP) system designed to streamline operations for a major logistics company. Features include real-time tracking, inventory management, and- automated reporting.",
     imageUrl: "https://placehold.co/600x400.png",
     dataAiHint: "logistics dashboard",
     technologies: ["Next.js", "TypeScript", "PostgreSQL", "Docker"],
@@ -102,14 +103,12 @@ export default function ProjectsPage() {
 
   return (
     <>
-      <div className="bg-background min-h-screen">
-        <div className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
-          <header className="text-center mb-12">
-            <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary">Our Projects</h1>
-            <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+      <AppBar title="Our Projects" />
+      <div className="bg-background">
+        <div className="max-w-sm mx-auto p-4">
+          <p className="text-center text-muted-foreground mb-8">
               A showcase of our dedication, skill, and the successful partnerships we've built.
-            </p>
-          </header>
+          </p>
 
           <Tabs defaultValue="ongoing" className="w-full">
             <TabsList className="grid w-full grid-cols-2">
@@ -117,14 +116,14 @@ export default function ProjectsPage() {
               <TabsTrigger value="completed">Completed</TabsTrigger>
             </TabsList>
             <TabsContent value="ongoing" className="mt-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 {ongoingProjects.map((project) => (
                   <ProjectCard key={project.id} project={project} onViewDetails={handleViewDetails} />
                 ))}
               </div>
             </TabsContent>
             <TabsContent value="completed" className="mt-8">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 {completedProjects.map((project) => (
                   <ProjectCard key={project.id} project={project} onViewDetails={handleViewDetails} />
                 ))}

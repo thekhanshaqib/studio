@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Award } from 'lucide-react';
+import { AppBar } from '@/components/AppBar';
 
 type AwardItem = {
   id: string;
@@ -45,22 +45,21 @@ const AwardCard = ({ award }: { award: AwardItem }) => (
 
 export default function AwardsPage() {
   return (
-    <div className="bg-background min-h-screen">
-      <div className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
-        <header className="text-center mb-12">
-          <Award className="mx-auto h-16 w-16 text-accent mb-4" />
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary">Awards &amp; Recognition</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+    <>
+      <AppBar title="Awards & Recognition" />
+      <div className="bg-background">
+        <div className="max-w-sm mx-auto p-4">
+          <p className="text-center text-muted-foreground mb-8">
             Our commitment to excellence has been recognized by industry leaders and esteemed organizations.
           </p>
-        </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {awards.map(award => (
-            <AwardCard key={award.id} award={award} />
-          ))}
+          <div className="grid grid-cols-1 gap-6">
+            {awards.map(award => (
+              <AwardCard key={award.id} award={award} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }

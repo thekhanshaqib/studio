@@ -2,6 +2,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Zap, Code, BarChart3, PenTool, Search, CloudCog } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { AppBar } from '@/components/AppBar';
 
 type Service = {
   title: string;
@@ -71,36 +72,36 @@ const ServiceCard = ({ service }: { service: Service }) => (
 
 export default function ServicesPage() {
   return (
-    <div className="bg-background min-h-screen">
-      <div className="max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
-        <header className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-primary">Our Services</h1>
-          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+    <>
+      <AppBar title="Our Services" />
+      <div className="bg-background">
+        <div className="max-w-sm mx-auto p-4">
+          <p className="text-center text-muted-foreground mb-8">
             From creative inception to technical execution, we offer a comprehensive suite of services to bring your vision to life.
           </p>
-        </header>
 
-        <Tabs defaultValue="core" className="w-full">
-          <TabsList className="grid w-full grid-cols-2">
-            <TabsTrigger value="core">Core Services</TabsTrigger>
-            <TabsTrigger value="technical">Technical Services</TabsTrigger>
-          </TabsList>
-          <TabsContent value="core" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {coreServices.map((service) => (
-                <ServiceCard key={service.title} service={service} />
-              ))}
-            </div>
-          </TabsContent>
-          <TabsContent value="technical" className="mt-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {technicalServices.map((service) => (
-                <ServiceCard key={service.title} service={service} />
-              ))}
-            </div>
-          </TabsContent>
-        </Tabs>
+          <Tabs defaultValue="core" className="w-full">
+            <TabsList className="grid w-full grid-cols-2">
+              <TabsTrigger value="core">Core Services</TabsTrigger>
+              <TabsTrigger value="technical">Technical Services</TabsTrigger>
+            </TabsList>
+            <TabsContent value="core" className="mt-8">
+              <div className="grid grid-cols-1 gap-6">
+                {coreServices.map((service) => (
+                  <ServiceCard key={service.title} service={service} />
+                ))}
+              </div>
+            </TabsContent>
+            <TabsContent value="technical" className="mt-8">
+              <div className="grid grid-cols-1 gap-6">
+                {technicalServices.map((service) => (
+                  <ServiceCard key={service.title} service={service} />
+                ))}
+              </div>
+            </TabsContent>
+          </Tabs>
+        </div>
       </div>
-    </div>
+    </>
   );
 }
