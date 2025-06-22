@@ -1,8 +1,21 @@
+"use client";
+
+import * as React from 'react';
 import Link from 'next/link';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Image from 'next/image';
+import Autoplay from "embla-carousel-autoplay";
+
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Building, Lightbulb, Briefcase, Award } from 'lucide-react';
-import Image from 'next/image';
+import { Badge } from '@/components/ui/badge';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const navItems = [
   { href: '/about', label: 'About Us', icon: Building, description: 'Learn more about our company' },
@@ -11,7 +24,54 @@ const navItems = [
   { href: '/awards', label: 'Our Awards', icon: Award, description: 'Recognitions of our excellence' },
 ];
 
+const featuredProjects = [
+    {
+      id: 'p1',
+      title: "Project Phoenix",
+      category: "Web Application",
+      description: "A comprehensive enterprise resource planning (ERP) system designed to streamline operations for a major logistics company.",
+      imageUrl: "https://placehold.co/600x400.png",
+      dataAiHint: "logistics dashboard",
+    },
+    {
+      id: 'c1',
+      title: "E-Shopify Redesign",
+      category: "E-commerce",
+      description: "A full redesign and migration of a popular online fashion retailer to a modern, headless e-commerce architecture.",
+      imageUrl: "https://placehold.co/600x400.png",
+      dataAiHint: "fashion website",
+    },
+    {
+      id: 'c2',
+      title: "HealthWell Platform",
+      category: "Healthcare",
+      description: "A secure patient portal for a regional hospital network, allowing patients to book appointments, view medical records, and communicate with healthcare providers.",
+      imageUrl: "https://placehold.co/600x400.png",
+      dataAiHint: "healthcare portal",
+    },
+    {
+      id: 'p2',
+      title: "InnovateApp",
+      category: "Mobile App",
+      description: "A cross-platform mobile application for a fintech startup, enabling users to manage investments and track market trends with a highly intuitive interface.",
+      imageUrl: "https://placehold.co/600x400.png",
+      dataAiHint: "fintech app",
+    },
+    {
+      id: 'c3',
+      title: "Artisan's Marketplace",
+      category: "Web Platform",
+      description: "An online marketplace connecting artisans with buyers worldwide. Features included multi-vendor support, secure payments, and a custom review system.",
+      imageUrl: "https://placehold.co/600x400.png",
+      dataAiHint: "online marketplace",
+    }
+  ];
+
 export default function Home() {
+    const plugin = React.useRef(
+        Autoplay({ delay: 4000, stopOnInteraction: true })
+    );
+
   return (
     <div className="flex flex-col items-center bg-background">
       <div className="w-full max-w-5xl mx-auto p-4 sm:p-6 lg:p-8">
@@ -49,6 +109,54 @@ export default function Home() {
           <p className="max-w-3xl mx-auto text-lg text-muted-foreground">
             At Catalyst, we blend creative strategy with technical prowess to deliver solutions that not only meet but exceed expectations. Explore our work and see how we can be the catalyst for your next big idea.
           </p>
+        </section>
+
+        {/* Featured Projects Carousel */}
+        <section className="my-12 md:my-16">
+          <h2 className="text-3xl font-bold tracking-tight text-center mb-8">Featured Projects</h2>
+          <Carousel
+            plugins={[plugin.current]}
+            className="w-full"
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+              loop: true,
+            }}
+          >
+            <CarouselContent>
+              {featuredProjects.map((project) => (
+                <CarouselItem key={project.id} className="md:basis-1/2 lg:basis-1/3">
+                  <div className="p-1 h-full">
+                    <Card className="flex flex-col h-full overflow-hidden group transition-all duration-300 hover:shadow-xl">
+                      <div className="relative aspect-video w-full overflow-hidden bg-muted">
+                        <Image
+                          src={project.imageUrl}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-500 group-hover:scale-105"
+                          data-ai-hint={project.dataAiHint}
+                        />
+                      </div>
+                      <CardHeader>
+                        <CardTitle>{project.title}</CardTitle>
+                        <Badge variant="secondary" className="w-fit">{project.category}</Badge>
+                      </CardHeader>
+                      <CardContent className="flex-grow">
+                        <p className="text-muted-foreground text-sm line-clamp-3">{project.description}</p>
+                      </CardContent>
+                      <CardFooter>
+                        <Button asChild className="w-full">
+                            <Link href="/projects">View Project</Link>
+                        </Button>
+                      </CardFooter>
+                    </Card>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden sm:flex" />
+            <CarouselNext className="hidden sm:flex" />
+          </Carousel>
         </section>
 
         {/* Navigation Cards */}
