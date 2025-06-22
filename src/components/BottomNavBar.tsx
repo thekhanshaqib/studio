@@ -29,7 +29,6 @@ export function BottomNavBar() {
           const isExternal = href.startsWith('http');
           
           const commonProps = {
-            key: label,
             className: cn(
               "flex flex-col items-center justify-center text-muted-foreground hover:text-primary transition-colors duration-200 w-24",
               !isExternal && pathname === href && "text-primary"
@@ -45,14 +44,14 @@ export function BottomNavBar() {
 
           if (isExternal) {
             return (
-              <a href={href} target="_blank" rel="noopener noreferrer" {...commonProps}>
+              <a key={label} href={href} target="_blank" rel="noopener noreferrer" {...commonProps}>
                 {content}
               </a>
             );
           }
 
           return (
-            <Link href={href} {...commonProps}>
+            <Link key={label} href={href} {...commonProps}>
               {content}
             </Link>
           );
