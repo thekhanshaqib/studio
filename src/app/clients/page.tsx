@@ -21,7 +21,7 @@ type Testimonial = {
 };
 
 const clients: Client[] = [
-  { id: 'client1', name: "Innovate Corp", logoUrl: "https://placehold.co/150x75.png", dataAiHint: "company logo" },
+  { id: 'client1', name: "Innovate Corp", logoUrl: "https://megapower-mea.com/wp-content/uploads/2023/08/New-Project-8.jpg", dataAiHint: "company logo" },
   { id: 'client2', name: "Quantum Solutions", logoUrl: "https://placehold.co/150x75.png", dataAiHint: "tech logo" },
   { id: 'client3', name: "Apex Industries", logoUrl: "https://placehold.co/150x75.png", dataAiHint: "industrial logo" },
   { id: 'client4', name: "Horizon Digital", logoUrl: "https://placehold.co/150x75.png", dataAiHint: "digital logo" },

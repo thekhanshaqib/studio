@@ -16,7 +16,7 @@ const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
 const iconLinks = [
   { href: '/contact', label: 'Save Contact', icon: Contact2 },
   { href: 'tel:+97143960292', label: 'Contact Us', icon: Phone },
-  { href: 'https://wa.me/971501416416', label: 'WhatsApp', icon: WhatsAppIcon },
+  { href: 'https://wa.me/97143960292', label: 'WhatsApp', icon: WhatsAppIcon },
 ];
 
 export function BottomNavBar() {
