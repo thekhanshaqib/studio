@@ -37,8 +37,8 @@ export default function Home() {
       <div className="flex flex-col items-center bg-background">
         <div className="w-full max-w-sm mx-auto p-4">
           
-          <h1 className="text-2xl font-bold text-foreground py-6">
-            From Vision to Execution – 200+ Projects Strong and Growing.
+          <h1 className="text-3xl font-bold text-foreground py-6 leading-tight">
+            From Vision to Execution – <span className="text-primary">200</span>+ Projects Strong and Growing.
           </h1>
 
           {/* Banner Carousel */}
