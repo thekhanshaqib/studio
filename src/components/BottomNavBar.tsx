@@ -23,7 +23,7 @@ export function BottomNavBar() {
   return (
     <nav className="fixed bottom-4 left-5 right-5 z-50 pointer-events-none">
       <div className="w-[90%] max-w-sm mx-auto pointer-events-auto bg-white rounded-2xl shadow-lg">
-        <div className="flex justify-between items-center h-full p-5">
+        <div className="flex justify-between items-center h-full p-4">
             <Button asChild className="bg-black text-white hover:bg-zinc-800 rounded-full h-10 px-4 font-semibold text-sm">
                 <Link href="/contact">Get Started</Link>
             </Button>
@@ -33,7 +33,7 @@ export function BottomNavBar() {
                     const commonProps = {
                         className: cn("flex items-center justify-center group transition-colors duration-200")
                     };
-                    const content = <Icon className={cn("h-6 w-6 text-primary")} />;
+                    const content = <Icon className={cn("h-7 w-7 text-primary")} />;
 
                     if (isExternal) {
                         return (
