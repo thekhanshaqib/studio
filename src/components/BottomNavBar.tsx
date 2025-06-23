@@ -2,10 +2,10 @@
 "use client";
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { Contact2, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import type { SVGProps } from 'react';
+import { Button } from '@/components/ui/button';
 
 const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
     <svg fill="currentColor" width="24" height="24" viewBox="0 0 448 512" {...props}>
@@ -13,53 +13,43 @@ const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
-const navLinks = [
+const iconLinks = [
   { href: '/contact', label: 'Save Contact', icon: Contact2 },
   { href: '/contact', label: 'Contact Us', icon: Phone },
   { href: 'https://wa.me/971501416416', label: 'WhatsApp', icon: WhatsAppIcon },
 ];
 
 export function BottomNavBar() {
-  const pathname = usePathname();
-
   return (
     <nav className="fixed bottom-4 left-0 right-0 z-50 pointer-events-none">
       <div className="w-[90%] max-w-sm mx-auto pointer-events-auto bg-[#202020] rounded-2xl shadow-lg">
-        <div className="flex justify-around items-center h-full p-2">
-            {navLinks.map(({ href, label, icon: Icon }) => {
-            const isExternal = href.startsWith('http');
-            const isActive = !isExternal && pathname === href;
-            
-            const commonProps = {
-                className: cn(
-                "flex flex-col items-center justify-center group transition-colors duration-200 w-24 p-2 rounded-lg"
-                )
-            };
+        <div className="flex justify-between items-center h-full p-2">
+            <Button asChild className="bg-black text-white hover:bg-zinc-800 rounded-full h-10 px-4 font-semibold text-sm">
+                <Link href="/contact">Get Started</Link>
+            </Button>
+            <div className="flex items-center space-x-4 pr-1">
+                {iconLinks.map(({ href, label, icon: Icon }) => {
+                    const isExternal = href.startsWith('http');
+                    const commonProps = {
+                        className: cn("flex items-center justify-center group transition-colors duration-200")
+                    };
+                    const content = <Icon className={cn("h-6 w-6 text-primary hover:text-primary/80")} />;
 
-            const content = (
-                <>
-                <Icon className={cn("h-6 w-6 mb-1 text-primary")} />
-                <span className={cn(
-                    "text-xs font-medium text-center text-muted-foreground group-hover:text-primary",
-                    isActive && "text-primary"
-                )}>{label}</span>
-                </>
-            );
+                    if (isExternal) {
+                        return (
+                            <a key={label} href={href} target="_blank" rel="noopener noreferrer" {...commonProps} aria-label={label}>
+                                {content}
+                            </a>
+                        );
+                    }
 
-            if (isExternal) {
-                return (
-                <a key={label} href={href} target="_blank" rel="noopener noreferrer" {...commonProps}>
-                    {content}
-                </a>
-                );
-            }
-
-            return (
-                <Link key={label} href={href} {...commonProps}>
-                {content}
-                </Link>
-            );
-            })}
+                    return (
+                        <Link key={label} href={href} {...commonProps} aria-label={label}>
+                            {content}
+                        </Link>
+                    );
+                })}
+            </div>
         </div>
       </div>
     </nav>
