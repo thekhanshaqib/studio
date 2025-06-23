@@ -13,7 +13,7 @@ const pdfUrl = "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/du
 export function AppBar({ title, isHomePage = false }: AppBarProps) {
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="max-w-sm mx-auto flex h-14 items-center px-4">
+      <div className="max-w-sm mx-auto flex h-20 items-center px-4">
         {isHomePage ? (
           <div className="flex w-full items-center justify-between">
             <img
@@ -23,13 +23,13 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
               height={36}
               data-ai-hint="logo"
             />
-            <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-md h-12 w-12 hover:bg-accent hover:text-accent-foreground transition-colors">
-              <Download className="h-8 w-8 text-primary" />
-              <span className="sr-only">Download Profile</span>
+            <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center text-center">
+              <Download className="h-6 w-6 text-primary" />
+              <span className="text-xs text-primary font-medium">Download Profile</span>
             </a>
           </div>
         ) : (
-          <div className="grid w-full grid-cols-[auto_1fr_auto] items-center">
+          <div className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-2">
             <Button variant="ghost" size="icon" asChild>
               <Link href="/">
                 <ArrowLeft className="h-5 w-5 text-primary" />
@@ -39,9 +39,9 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
             <h1 className="text-center text-lg font-bold tracking-tight">
               {title}
             </h1>
-            <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-md h-12 w-12 hover:bg-accent hover:text-accent-foreground transition-colors">
-              <Download className="h-8 w-8 text-primary" />
-              <span className="sr-only">Download Profile</span>
+            <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center text-center">
+              <Download className="h-6 w-6 text-primary" />
+              <span className="text-xs text-primary font-medium">Download Profile</span>
             </a>
           </div>
         )}
