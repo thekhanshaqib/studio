@@ -25,7 +25,7 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
             />
             <Button variant="ghost" size="icon" asChild>
               <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer">
-                <Download className="h-5 w-5 text-primary" />
+                <Download className="h-6 w-6 text-primary" />
                 <span className="sr-only">Download Profile</span>
               </a>
             </Button>
@@ -43,7 +43,7 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
             </h1>
             <Button variant="ghost" size="icon" asChild>
               <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer">
-                <Download className="h-5 w-5 text-primary" />
+                <Download className="h-6 w-6 text-primary" />
                 <span className="sr-only">Download Profile</span>
               </a>
             </Button>
