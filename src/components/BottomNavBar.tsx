@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from 'next/link';
@@ -27,18 +26,21 @@ export function BottomNavBar() {
       <div className="flex justify-around items-center h-full max-w-sm mx-auto px-4">
         {navLinks.map(({ href, label, icon: Icon }) => {
           const isExternal = href.startsWith('http');
+          const isActive = !isExternal && pathname === href;
           
           const commonProps = {
             className: cn(
-              "flex flex-col items-center justify-center text-muted-foreground hover:text-primary transition-colors duration-200 w-24",
-              !isExternal && pathname === href && "text-primary"
+              "flex flex-col items-center justify-center group transition-colors duration-200 w-24",
             )
           };
 
           const content = (
             <>
-              <Icon className="h-6 w-6 mb-1" />
-              <span className="text-xs font-medium text-center">{label}</span>
+              <Icon className={cn("h-6 w-6 mb-1 text-primary")} />
+              <span className={cn(
+                "text-xs font-medium text-center text-muted-foreground group-hover:text-primary",
+                isActive && "text-primary"
+              )}>{label}</span>
             </>
           );
 
