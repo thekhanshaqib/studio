@@ -27,7 +27,7 @@ export function BottomNavBar() {
             <Button asChild className="bg-black text-white hover:bg-zinc-800 rounded-full h-10 px-4 font-semibold text-sm">
                 <Link href="/contact">Get Started</Link>
             </Button>
-            <div className="flex items-center space-x-4 pr-1">
+            <div className="flex items-center space-x-5">
                 {iconLinks.map(({ href, label, icon: Icon }) => {
                     const isExternal = href.startsWith('http');
                     const commonProps = {
