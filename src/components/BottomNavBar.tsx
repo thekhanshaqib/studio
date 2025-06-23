@@ -29,7 +29,7 @@ const iconLinks = [
 
 export function BottomNavBar() {
   return (
-    <nav className="fixed bottom-4 left-5 right-5 z-50 pointer-events-none">
+    <nav className="fixed bottom-4 left-2 right-2 z-50 pointer-events-none">
       <div className="w-[90%] max-w-sm mx-auto pointer-events-auto bg-white rounded-2xl shadow-lg">
         <div className="flex justify-between items-center h-full p-3">
             <Button asChild className="bg-black text-white hover:bg-zinc-800 rounded-full h-10 px-4 font-semibold text-sm">

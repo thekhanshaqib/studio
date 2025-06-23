@@ -13,16 +13,15 @@ type Product = {
   description: string;
   imageUrl: string;
   dataAiHint: string;
-  price: string;
 };
 
 const products: Product[] = [
-  { id: 'prod1', name: "Megapower CRM Suite", category: "Software", description: "A powerful, all-in-one CRM to manage customer relationships, sales pipelines, and marketing campaigns.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "software dashboard", price: "$49/mo" },
-  { id: 'prod2', name: "Quantum Analytics", category: "Software", description: "Advanced analytics platform that provides deep insights into your business data with predictive modeling.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "data analytics", price: "$99/mo" },
-  { id: 'prod3', name: "ConnectAPI", category: "Developer Tools", description: "A robust set of APIs to seamlessly integrate your applications with third-party services.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "API code", price: "Usage-based" },
-  { id: 'prod4', name: "SecureVault", category: "Security", description: "Enterprise-grade security solution for data protection, threat detection, and compliance management.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "cyber security", price: "$129/mo" },
-  { id: 'prod5', name: "FlowBuilder", category: "Developer Tools", description: "A visual workflow automation tool that empowers developers to build complex integrations with ease.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "workflow diagram", price: "$79/mo" },
-  { id: 'prod6', name: "Insight CMS", category: "Software", description: "A headless content management system designed for flexibility and performance.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "CMS interface", price: "$39/mo" },
+  { id: 'prod1', name: "Megapower CRM Suite", category: "Software", description: "A powerful, all-in-one CRM to manage customer relationships, sales pipelines, and marketing campaigns.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "software dashboard" },
+  { id: 'prod2', name: "Quantum Analytics", category: "Software", description: "Advanced analytics platform that provides deep insights into your business data with predictive modeling.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "data analytics" },
+  { id: 'prod3', name: "ConnectAPI", category: "Developer Tools", description: "A robust set of APIs to seamlessly integrate your applications with third-party services.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "API code" },
+  { id: 'prod4', name: "SecureVault", category: "Security", description: "Enterprise-grade security solution for data protection, threat detection, and compliance management.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "cyber security" },
+  { id: 'prod5', name: "FlowBuilder", category: "Developer Tools", description: "A visual workflow automation tool that empowers developers to build complex integrations with ease.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "workflow diagram" },
+  { id: 'prod6', name: "Insight CMS", category: "Software", description: "A headless content management system designed for flexibility and performance.", imageUrl: "https://placehold.co/400x400.png", dataAiHint: "CMS interface" },
 ];
 
 const categories = ["All", ...Array.from(new Set(products.map(p => p.category)))];
@@ -43,9 +42,8 @@ const ProductCard = ({ product }: { product: Product }) => (
       <CardTitle>{product.name}</CardTitle>
       <Badge variant="secondary" className="w-fit">{product.category}</Badge>
     </CardHeader>
-    <CardContent className="flex-grow space-y-4">
+    <CardContent className="flex-grow">
       <p className="text-muted-foreground text-sm line-clamp-3">{product.description}</p>
-      <p className="text-xl font-bold text-primary">{product.price}</p>
     </CardContent>
     <div className="p-4 pt-0">
         <Button className="w-full">Learn More</Button>
