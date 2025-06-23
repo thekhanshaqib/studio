@@ -16,7 +16,7 @@ const pageLinks = [
   { href: '/services', label: 'Services', icon: Cog },
   { href: '/projects', label: 'Projects', icon: Briefcase },
   { href: '/products', label: 'Machinery & Products', icon: ShoppingBag },
-  { href: '/awards', label: 'Awards & Certificates', icon: Award },
+  { href: '/awards', label: 'Certifications & Accreditation', icon: Award },
   { href: '/clients', label: 'Testimonials', icon: Quote },
 ];
 
