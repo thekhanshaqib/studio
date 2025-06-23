@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -108,10 +109,12 @@ export default function ServicesPage() {
           </p>
 
           <Tabs defaultValue="core" className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="core">Core Services</TabsTrigger>
-              <TabsTrigger value="technical">Technical Services</TabsTrigger>
-            </TabsList>
+            <div className="sticky top-20 z-10 bg-background py-2 border-b">
+                <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="core">Core Services</TabsTrigger>
+                <TabsTrigger value="technical">Technical Services</TabsTrigger>
+                </TabsList>
+            </div>
             <TabsContent value="core" className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
               {coreServices.map((service) => (
                 <ServiceCard key={service.title} service={service} />

@@ -7,10 +7,10 @@ import { AppBar } from '@/components/AppBar';
 
 const contactDetails = {
   name: "Mega Power Contracting LLC",
-  email: "info@megapower.com",
+  email: "info@megapower-mea.com",
   phone: "+971 4 396 0292",
-  address: "Business Bay, Dubai, UAE",
-  website: "https://www.megapower.com"
+  address: "Deira, Dar Al Wuheida Building - 105 - Hor Al Anz East - Dubai - United Arab Emirates",
+  website: "http://megapower-mea.com/"
 };
 
 export default function ContactPage() {
