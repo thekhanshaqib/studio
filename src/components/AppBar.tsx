@@ -23,9 +23,9 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
               height={36}
               data-ai-hint="logo"
             />
-            <Button variant="ghost" size="icon" asChild>
+            <Button variant="ghost" className="p-0 h-12 w-12" asChild>
               <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer">
-                <Download className="h-6 w-6 text-primary" />
+                <Download className="h-8 w-8 text-primary" />
                 <span className="sr-only">Download Profile</span>
               </a>
             </Button>
@@ -41,9 +41,9 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
             <h1 className="text-center text-lg font-bold tracking-tight">
               {title}
             </h1>
-            <Button variant="ghost" size="icon" asChild>
+            <Button variant="ghost" className="p-0 h-12 w-12" asChild>
               <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer">
-                <Download className="h-6 w-6 text-primary" />
+                <Download className="h-8 w-8 text-primary" />
                 <span className="sr-only">Download Profile</span>
               </a>
             </Button>
