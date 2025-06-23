@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
@@ -22,20 +23,19 @@ type Testimonial = {
 
 const clients: Client[] = [
   { id: 'client1', name: "Innovate Corp", logoUrl: "https://megapower-mea.com/wp-content/uploads/2023/08/New-Project-8.jpg", dataAiHint: "company logo" },
-  { id: 'client2', name: "Quantum Solutions", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Pioneer-Cement-Industries.png", dataAiHint: "tech logo" },
-  { id: 'client3', name: "Apex Industries", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Imdad-Engineering-Contracting-LLC.png", dataAiHint: "industrial logo" },
-  { id: 'client4', name: "Horizon Digital", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Fujairah-Cement-Industries-Logo.gif", dataAiHint: "digital logo" },
-  { id: 'client5', name: "EcoGoods", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/logo-azolis_c.png", dataAiHint: "green logo" },
-  { id: 'client6', name: "Pinnacle Finance", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/scientechnic-logo.png", dataAiHint: "finance logo" },
-  { id: 'client7', name: "NextGen Med", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Aswan-International-Engineering-e1638265565785.jpg", dataAiHint: "medical logo" },
-  { id: 'client8', name: "Starlight Studios", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/First-ESCO-e1638265688767.png", dataAiHint: "media logo" },
-  { id: 'client1', name: "Innovate Corp", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Oasis-Wear-Tech-Industries-LLC-e1638265896500.png", dataAiHint: "company logo" },
-  { id: 'client2', name: "Quantum Solutions", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Raysut-Cement-Company-e1638265633114.jpg", dataAiHint: "tech logo" },
-  { id: 'client3', name: "Apex Industries", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/sharjah-cement-logo.png", dataAiHint: "industrial logo" },
-  { id: 'client4', name: "Horizon Digital", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Cemerg.png", dataAiHint: "digital logo" },
-  { id: 'client5', name: "EcoGoods", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Modern-Executive-System-Contracting-1.png", dataAiHint: "green logo" },
-  { id: 'client6', name: "Pinnacle Finance", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/RAS-Engineering.jpg", dataAiHint: "finance logo" },
-  
+  { id: 'client2', name: "Pioneer Cement", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Pioneer-Cement-Industries.png", dataAiHint: "tech logo" },
+  { id: 'client3', name: "Imdad Contracting", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Imdad-Engineering-Contracting-LLC.png", dataAiHint: "industrial logo" },
+  { id: 'client4', name: "Fujairah Cement", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Fujairah-Cement-Industries-Logo.gif", dataAiHint: "digital logo" },
+  { id: 'client5', name: "Azolis", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/logo-azolis_c.png", dataAiHint: "green logo" },
+  { id: 'client6', name: "Scientechnic", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/scientechnic-logo.png", dataAiHint: "finance logo" },
+  { id: 'client7', name: "Aswan Engineering", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Aswan-International-Engineering-e1638265565785.jpg", dataAiHint: "medical logo" },
+  { id: 'client8', name: "First ESCO", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/First-ESCO-e1638265688767.png", dataAiHint: "media logo" },
+  { id: 'client9', name: "Oasis Wear Tech", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Oasis-Wear-Tech-Industries-LLC-e1638265896500.png", dataAiHint: "company logo" },
+  { id: 'client10', name: "Raysut Cement", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Raysut-Cement-Company-e1638265633114.jpg", dataAiHint: "tech logo" },
+  { id: 'client11', name: "Sharjah Cement", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/sharjah-cement-logo.png", dataAiHint: "industrial logo" },
+  { id: 'client12', name: "Cemerg", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Cemerg.png", dataAiHint: "digital logo" },
+  { id: 'client13', name: "MESC", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/Modern-Executive-System-Contracting-1.png", dataAiHint: "green logo" },
+  { id: 'client14', name: "RAS Engineering", logoUrl: "https://megapower-mea.com/wp-content/uploads/2021/11/RAS-Engineering.jpg", dataAiHint: "finance logo" },
 ];
 
 const testimonials: Testimonial[] = [
@@ -61,7 +61,7 @@ export default function ClientsPage() {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-3 gap-6 items-center">
-                {clients.slice(0, 20).map(client => (
+                {clients.map(client => (
                   <div key={client.id} className="flex justify-center opacity-60 hover:opacity-100 transition-all duration-300">
                     <Image src={client.logoUrl} alt={client.name} width={150} height={75} objectFit="contain" data-ai-hint={client.dataAiHint} />
                   </div>

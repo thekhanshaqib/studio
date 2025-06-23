@@ -25,7 +25,7 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
             />
             <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center text-center">
               <Download className="h-6 w-6 text-primary" />
-              <span className="text-xs text-primary font-medium">Download Profile</span>
+              <span className="text-xs text-primary font-medium">Profile</span>
             </a>
           </div>
         ) : (
@@ -41,7 +41,7 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
             </h1>
             <a href={pdfUrl} download="megapower-profile.pdf" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center justify-center text-center">
               <Download className="h-6 w-6 text-primary" />
-              <span className="text-xs text-primary font-medium">Download Profile</span>
+              <span className="text-xs text-primary font-medium">Profile</span>
             </a>
           </div>
         )}
