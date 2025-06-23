@@ -12,7 +12,7 @@ export function AppBar({ title, isHomePage = false }: AppBarProps) {
     <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="max-w-sm mx-auto flex h-14 items-center px-4">
         {isHomePage ? (
-          <div className="flex w-full items-center justify-center">
+          <div className="flex w-full items-center justify-start">
             <img
               src="https://megapower-mea.com/wp-content/uploads/2021/11/retinalogo.jpg"
               alt="Megapower Logo"
