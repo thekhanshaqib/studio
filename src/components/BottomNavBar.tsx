@@ -1,3 +1,4 @@
+
 "use client";
 
 import Link from 'next/link';
@@ -15,49 +16,51 @@ const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
 const navLinks = [
   { href: '/contact', label: 'Save Contact', icon: Contact2 },
   { href: '/contact', label: 'Contact Us', icon: Phone },
-  { href: 'https://wa.me/15551234567', label: 'WhatsApp', icon: WhatsAppIcon },
+  { href: 'https://wa.me/971501416416', label: 'WhatsApp', icon: WhatsAppIcon },
 ];
 
 export function BottomNavBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 h-16 bg-card border-t shadow-t-lg z-50">
-      <div className="flex justify-around items-center h-full max-w-sm mx-auto px-4">
-        {navLinks.map(({ href, label, icon: Icon }) => {
-          const isExternal = href.startsWith('http');
-          const isActive = !isExternal && pathname === href;
-          
-          const commonProps = {
-            className: cn(
-              "flex flex-col items-center justify-center group transition-colors duration-200 w-24",
-            )
-          };
+    <nav className="fixed bottom-4 left-0 right-0 z-50 pointer-events-none">
+      <div className="w-[90%] max-w-sm mx-auto pointer-events-auto bg-[#202020] rounded-2xl shadow-lg">
+        <div className="flex justify-around items-center h-full p-2">
+            {navLinks.map(({ href, label, icon: Icon }) => {
+            const isExternal = href.startsWith('http');
+            const isActive = !isExternal && pathname === href;
+            
+            const commonProps = {
+                className: cn(
+                "flex flex-col items-center justify-center group transition-colors duration-200 w-24 p-2 rounded-lg"
+                )
+            };
 
-          const content = (
-            <>
-              <Icon className={cn("h-6 w-6 mb-1 text-primary")} />
-              <span className={cn(
-                "text-xs font-medium text-center text-muted-foreground group-hover:text-primary",
-                isActive && "text-primary"
-              )}>{label}</span>
-            </>
-          );
-
-          if (isExternal) {
-            return (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer" {...commonProps}>
-                {content}
-              </a>
+            const content = (
+                <>
+                <Icon className={cn("h-6 w-6 mb-1 text-primary")} />
+                <span className={cn(
+                    "text-xs font-medium text-center text-muted-foreground group-hover:text-primary",
+                    isActive && "text-primary"
+                )}>{label}</span>
+                </>
             );
-          }
 
-          return (
-            <Link key={label} href={href} {...commonProps}>
-              {content}
-            </Link>
-          );
-        })}
+            if (isExternal) {
+                return (
+                <a key={label} href={href} target="_blank" rel="noopener noreferrer" {...commonProps}>
+                    {content}
+                </a>
+                );
+            }
+
+            return (
+                <Link key={label} href={href} {...commonProps}>
+                {content}
+                </Link>
+            );
+            })}
+        </div>
       </div>
     </nav>
   );
