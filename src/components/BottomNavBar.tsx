@@ -15,7 +15,7 @@ const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
 
 const iconLinks = [
   { href: '/contact', label: 'Save Contact', icon: Contact2 },
-  { href: 'tel:+97143960292', label: 'Contact Us', icon: Phone },
+  { href: 'tel:+97143960292', label: 'Call', icon: Phone },
   { href: 'https://wa.me/97143960292', label: 'WhatsApp', icon: WhatsAppIcon },
 ];
 
@@ -27,13 +27,18 @@ export function BottomNavBar() {
             <Button asChild className="bg-black text-white hover:bg-zinc-800 rounded-full h-10 px-4 font-semibold text-sm">
                 <Link href="/contact">Get Started</Link>
             </Button>
-            <div className="flex items-center space-x-7">
+            <div className="flex items-center space-x-5">
                 {iconLinks.map(({ href, label, icon: Icon }) => {
                     const isInternal = href.startsWith('/');
                     const commonProps = {
-                        className: cn("flex items-center justify-center group transition-colors duration-200")
+                        className: cn("flex flex-col items-center justify-center group transition-colors duration-200 text-center")
                     };
-                    const content = <Icon className={cn("h-7 w-7 text-primary")} />;
+                    const content = (
+                      <>
+                        <Icon className={cn("h-7 w-7 text-primary")} />
+                        <span className="text-xs text-primary font-medium mt-1">{label}</span>
+                      </>
+                    );
 
                     if (isInternal) {
                         return (
