@@ -37,6 +37,10 @@ export default function Home() {
       <div className="flex flex-col items-center bg-background">
         <div className="w-full max-w-sm mx-auto p-4">
           
+          <h1 className="text-2xl font-bold text-foreground py-6">
+            From Vision to Execution – 200+ Projects Strong and Growing.
+          </h1>
+
           {/* Banner Carousel */}
           <Carousel
             plugins={[plugin.current]}
@@ -63,15 +67,15 @@ export default function Home() {
           </Carousel>
 
           {/* Navigation Grid */}
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-2">
             {pageLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex flex-col items-center justify-center p-1 rounded-lg shadow-sm text-primary-foreground bg-primary hover:bg-primary/90 transition-colors h-20"
+                className="flex flex-col items-center justify-center p-2 rounded-lg shadow-sm text-primary-foreground bg-primary hover:bg-primary/90 transition-colors h-16"
               >
-                <item.icon className="h-6 w-6 mb-1 text-primary-foreground" />
-                <span className="text-center text-sm font-medium">{item.label}</span>
+                <item.icon className="h-5 w-5 mb-1 text-primary-foreground" />
+                <span className="text-center text-xs font-medium">{item.label}</span>
               </Link>
             ))}
           </div>
