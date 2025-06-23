@@ -120,7 +120,8 @@ export default function ProjectsPage() {
       <div className="bg-background">
         <div className="max-w-sm mx-auto p-4">
           <p className="text-center text-muted-foreground mb-8">
-              A showcase of our dedication, skill, and the successful partnerships we've built.
+          With over 200+ successfully delivered projects across 5+ key sectors in the UAE, Mega Power has built a strong reputation for reliability, innovation, and excellence. Below are some of our recent highlights. For the full portfolio, visit our website:
+          megapower-mea.com/our-realizations/
           </p>
 
           <Tabs defaultValue="ongoing" className="w-full">

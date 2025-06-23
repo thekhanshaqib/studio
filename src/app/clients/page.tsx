@@ -55,7 +55,7 @@ export default function ClientsPage() {
             <CardContent>
               <div className="grid grid-cols-3 gap-6 items-center">
                 {clients.slice(0, 6).map(client => (
-                  <div key={client.id} className="flex justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                  <div key={client.id} className="flex justify-center opacity-60 hover:opacity-100 transition-all duration-300">
                     <Image src={client.logoUrl} alt={client.name} width={150} height={75} objectFit="contain" data-ai-hint={client.dataAiHint} />
                   </div>
                 ))}
@@ -73,7 +73,7 @@ export default function ClientsPage() {
                 {testimonials.map(testimonial => (
                   <Card key={testimonial.id} className="w-[300px] whitespace-normal flex-shrink-0">
                     <CardContent className="p-6">
-                      <Quote className="h-6 w-6 text-accent mb-3" />
+                      <Quote className="h-6 w-6 text-primary mb-3" />
                       <p className="text-muted-foreground text-sm mb-4">"{testimonial.quote}"</p>
                       <div className="flex items-center">
                         <Image src={testimonial.avatarUrl} alt={testimonial.name} width={40} height={40} className="rounded-full mr-3" data-ai-hint="person portrait" />
