@@ -1,17 +1,40 @@
+"use client";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Download } from "lucide-react";
+import { Mail, Phone, MapPin, Download, Globe } from "lucide-react";
 import { AppBar } from '@/components/AppBar';
 
 const contactDetails = {
-  email: "info@megapower-mea.com",
+  name: "Mega Power Contracting LLC",
+  email: "info@megapower.com",
   phone: "+971 4 396 0292",
-  address: "Deira, Dar Al Wuheida Building - 105 - Hor Al Anz East - Dubai - United Arab Emirates",
-  website: "http://www.megapower-mea.com/",
-  vcardUrl: "/megapower-contact.vcf" 
+  address: "Business Bay, Dubai, UAE",
+  website: "https://www.megapower.com"
 };
 
 export default function ContactPage() {
+  const handleSaveContact = () => {
+    const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:${contactDetails.name}
+TEL;TYPE=WORK,VOICE:${contactDetails.phone}
+EMAIL:${contactDetails.email}
+ADR;TYPE=WORK:;;${contactDetails.address}
+URL:${contactDetails.website}
+END:VCARD`;
+
+    const blob = new Blob([vcard], { type: "text/vcard;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = "MegaPower.vcf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+  };
+
   return (
     <>
       <AppBar title="Contact Information" />
@@ -41,19 +64,17 @@ export default function ContactPage() {
                   <p className="text-muted-foreground">{contactDetails.address}</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+              <div className="flex items-center space-x-4">
+                <Globe className="h-6 w-6 text-primary flex-shrink-0" />
                 <div>
                   <p className="font-semibold">Website</p>
-                  <p className="text-muted-foreground">{contactDetails.website}</p>
+                  <a href={contactDetails.website} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:underline">{contactDetails.website}</a>
                 </div>
               </div>
               <div className="pt-4">
-                  <Button asChild className="w-full h-12 text-base">
-                      <a href={contactDetails.vcardUrl} download="Megapower_Contact.vcf">
-                          <Download className="mr-2 h-5 w-5" />
-                          Save Contact
-                      </a>
+                  <Button onClick={handleSaveContact} className="w-full h-12 text-base">
+                      <Download className="mr-2 h-5 w-5" />
+                      Save Contact
                   </Button>
               </div>
             </CardContent>
