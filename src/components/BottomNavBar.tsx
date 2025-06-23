@@ -33,7 +33,7 @@ export function BottomNavBar() {
                     const commonProps = {
                         className: cn("flex items-center justify-center group transition-colors duration-200")
                     };
-                    const content = <Icon className={cn("h-6 w-6 text-gray-800 hover:text-primary")} />;
+                    const content = <Icon className={cn("h-6 w-6 text-primary")} />;
 
                     if (isExternal) {
                         return (
