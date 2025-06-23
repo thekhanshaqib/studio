@@ -15,7 +15,7 @@ const WhatsAppIcon = (props: SVGProps<SVGSVGElement>) => (
 
 const iconLinks = [
   { href: '/contact', label: 'Save Contact', icon: Contact2 },
-  { href: '/contact', label: 'Contact Us', icon: Phone },
+  { href: 'tel:+97143960292', label: 'Contact Us', icon: Phone },
   { href: 'https://wa.me/971501416416', label: 'WhatsApp', icon: WhatsAppIcon },
 ];
 
@@ -29,24 +29,31 @@ export function BottomNavBar() {
             </Button>
             <div className="flex items-center space-x-7">
                 {iconLinks.map(({ href, label, icon: Icon }) => {
-                    const isExternal = href.startsWith('http');
+                    const isInternal = href.startsWith('/');
                     const commonProps = {
                         className: cn("flex items-center justify-center group transition-colors duration-200")
                     };
                     const content = <Icon className={cn("h-7 w-7 text-primary")} />;
 
-                    if (isExternal) {
+                    if (isInternal) {
                         return (
-                            <a key={label} href={href} target="_blank" rel="noopener noreferrer" {...commonProps} aria-label={label}>
+                            <Link key={label} href={href} {...commonProps} aria-label={label}>
                                 {content}
-                            </a>
+                            </Link>
                         );
                     }
 
                     return (
-                        <Link key={label} href={href} {...commonProps} aria-label={label}>
+                        <a
+                            key={label}
+                            href={href}
+                            target={href.startsWith('http') ? '_blank' : undefined}
+                            rel={href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                            {...commonProps}
+                            aria-label={label}
+                        >
                             {content}
-                        </Link>
+                        </a>
                     );
                 })}
             </div>

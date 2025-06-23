@@ -4,9 +4,10 @@ import { Mail, Phone, MapPin, Download } from "lucide-react";
 import { AppBar } from '@/components/AppBar';
 
 const contactDetails = {
-  email: "contact@megapower.llc",
-  phone: "+1 (555) 123-4567",
-  address: "123 Electra Ave, Gearson, 54321",
+  email: "info@megapower-mea.com",
+  phone: "+971 4 396 0292",
+  address: "Deira, Dar Al Wuheida Building - 105 - Hor Al Anz East - Dubai - United Arab Emirates",
+  website: "http://www.megapower-mea.com/",
   vcardUrl: "/megapower-contact.vcf" 
 };
 
@@ -38,6 +39,13 @@ export default function ContactPage() {
                 <div>
                   <p className="font-semibold">Address</p>
                   <p className="text-muted-foreground">{contactDetails.address}</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <MapPin className="h-6 w-6 text-primary mt-1 flex-shrink-0" />
+                <div>
+                  <p className="font-semibold">Website</p>
+                  <p className="text-muted-foreground">{contactDetails.website}</p>
                 </div>
               </div>
               <div className="pt-4">
