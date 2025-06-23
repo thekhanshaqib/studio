@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -74,7 +75,7 @@ export default function ProductsPage() {
           </p>
 
           <Tabs defaultValue="All" className="w-full">
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center sticky top-20 z-10 bg-background py-2 border-b">
               <TabsList>
                 {categories.map(category => (
                   <TabsTrigger key={category} value={category}>{category}</TabsTrigger>
@@ -83,7 +84,7 @@ export default function ProductsPage() {
             </div>
             
             {categories.map(category => (
-              <TabsContent key={category} value={category}>
+              <TabsContent key={category} value={category} className="mt-8">
                   <ProductGrid category={category} />
               </TabsContent>
             ))}

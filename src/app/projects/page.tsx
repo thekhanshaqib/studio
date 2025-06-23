@@ -125,10 +125,12 @@ export default function ProjectsPage() {
           </p>
 
           <Tabs defaultValue="ongoing" className="w-full">
-            <TabsList className="grid w-full grid-cols-2">
-              <TabsTrigger value="ongoing">Ongoing</TabsTrigger>
-              <TabsTrigger value="completed">Completed</TabsTrigger>
-            </TabsList>
+            <div className="sticky top-20 z-10 bg-background py-2 border-b">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="ongoing">Ongoing</TabsTrigger>
+                <TabsTrigger value="completed">Completed</TabsTrigger>
+              </TabsList>
+            </div>
             <TabsContent value="ongoing" className="mt-8">
               <div className="grid grid-cols-1 gap-6">
                 {ongoingProjects.map((project) => (
